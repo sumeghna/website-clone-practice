@@ -1,0 +1,21 @@
+.product-section {
+  padding: 40px;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.product-card {
+  border: 1px solid #ddd;
+  padding: 16px;
+  text-align: center;
+}
+
+.img-placeholder {
+  height: 120px;
+  background: #f0f0f0;
+  margin-bottom: 10px;
+}
