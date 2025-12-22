@@ -6,7 +6,7 @@ function Navbar() {
         <li>Men</li>
         <li>Women</li>
         <li>Kids</li>
-        <li>Sale</li>
+        
       </ul>
     </nav>
   );
