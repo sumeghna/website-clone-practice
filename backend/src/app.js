@@ -1,15 +1,18 @@
-const express=require("express");
-const cors=require("cors");
+const express = require("express");
+const productRoutes = require("./routes/product.routes");
 
-const app=express();
+const app = express();
 
-
-app.use(cors());
+// Middleware to parse JSON
 app.use(express.json());
 
+// Routes
+app.use("/api/products", productRoutes);
 
-app.get("/",(req,res)=>{
-    res.send("Campus Shoes API is running");
+// Global error handler
+app.use((err, req, res, next) => {
+  console.error(err.stack);
+  res.status(500).json({ success: false, message: "Server Error" });
 });
 
-module.exports=app;
+module.exports = app;
