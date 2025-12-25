@@ -1,5 +1,6 @@
 .hero {
-  height: 80vh;
+  height: 70vh;
+  width: 86%;
   background-image: url("https://images.unsplash.com/photo-1542291026-7eec264c27ff");
   background-size: cover;
   background-position: center;
@@ -10,7 +11,7 @@
 
 .hero-content {
   color: white;
-  max-width: 500px;
+  max-width: 400px;
 }
 
 .hero-content h1 {
