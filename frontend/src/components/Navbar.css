@@ -1,0 +1,71 @@
+/* Top red offer bar */
+.top-offer {
+    background-color: #c40000;
+    color: white;
+    text-align: center;
+    font-size: 14px;
+    padding: 8px;
+}
+
+/* Main navbar */
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 40px;
+    border-bottom: 1px solid #eee;
+    background: white;
+}
+
+.nav-left {
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.nav-center {
+    text-align: center;
+}
+
+.nav-center h1 {
+    margin: 0;
+    color: #c40000;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.nav-center small {
+    font-size: 12px;
+    color: gray;
+}
+
+.nav-right {
+    display: flex;
+    gap: 20px;
+    font-size: 14px;
+}
+
+.nav-right a {
+    text-decoration: none;
+    color: black;
+}
+
+/* Category menu */
+.category-menu {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    padding: 12px 0;
+    font-size: 14px;
+    border-bottom: 1px solid #eee;
+    background: white;
+}
+
+.category-menu a {
+    text-decoration: none;
+    color: #444;
+    font-weight: 500;
+}
+
+.category-menu a:hover {
+    color: #c40000;
+}

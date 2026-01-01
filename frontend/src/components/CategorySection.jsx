@@ -3,14 +3,18 @@ import "../styles/category.css";
 function CategorySection() {
   return (
     <section className="category-section">
-      <div className="category-card men">
-      
+      <div className="category-card">
+        <img src="/images/men.jpeg" alt="Men" />
         <h2>Men</h2>
       </div>
-      <div className="category-card women">
+
+      <div className="category-card">
+        <img src="/images/women1.jpg" alt="Women" />
         <h2>Women</h2>
       </div>
-      <div className = "category-card kids">
+
+      <div className="category-card">
+        <img src="/images/kids.webp" alt="Kids" />
         <h2>Kids</h2>
       </div>
     </section>

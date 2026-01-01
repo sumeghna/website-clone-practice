@@ -1,10 +1,18 @@
-function ProductCard({product}){
-    return(
+function ProductCard({ product }) {
+    return (
         <div className="product-card">
-            <div className="img-placeholder">Image</div>
+            <img
+                src={product.image}
+                alt={product.name}
+                className="product-img"
+            />
+
             <h3>{product.name}</h3>
-            <p>{product.price}</p>
+            <p>₹{product.price}</p>
+
+            <button>Add to Cart</button>
         </div>
-    )
+    );
 }
+
 export default ProductCard;

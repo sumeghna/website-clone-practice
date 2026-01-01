@@ -1,20 +1,34 @@
-import Navbar from "../components/Navbar";
 import Hero from "../components/Hero";
 import CategorySection from "../components/CategorySection";
-import productSection from "../components/ProductSection";
+import ProductSection from "../components/ProductSection";
+import { Link } from "react-router-dom";
 
 function Home() {
   return (
     <div>
-      <productSection />
+      <Hero />
+      <ProductSection />
       <CategorySection />
-        <Navbar />
-        <Hero />
-      <h1>Campus Shoes Home Page</h1>
-      <p>Welcome to the Campus Shoes clone</p>
+
+      {/* Go to Payment Button */}
+      <div style={{ textAlign: "center", margin: "40px 0" }}>
+        <Link to="/payment">
+          <button
+            style={{
+              padding: "12px 30px",
+              fontSize: "16px",
+              backgroundColor: "#000",
+              color: "#fff",
+              border: "none",
+              cursor: "pointer"
+            }}
+          >
+            Go to Payment
+          </button>
+        </Link>
+      </div>
     </div>
   );
 }
 
-
-export default Home;    
+export default Home;
