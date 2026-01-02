@@ -1,14 +1,18 @@
 .menu-bar {
-    display: flex;
-    justify-content: center;
-    gap: 32px;
-    padding: 14px 0;
-    font-size: 14px;
-    font-weight: 500;
-    border-bottom: 1px solid #eee;
-    white-space: nowrap;
+  display: flex;
+  justify-content: center;
+  gap: 36px;
+  padding: 14px 0;
+  font-size: 13px;
+  font-weight: 500;
+  border-bottom: 1px solid #eee;
+  letter-spacing: 0.5px;
 }
 
 .menu-bar span {
-    cursor: pointer;
+  cursor: pointer;
+}
+
+.menu-bar span:hover {
+  color: #c40000;
 }
