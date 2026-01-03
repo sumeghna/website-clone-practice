@@ -17,7 +17,7 @@ const products = [
     {
         id: 3,
         name: "Campus Nitro",
-        price: 1499,
+        price: 34499,
         image: "/images/nitro.jpg.png"
     },
     {
