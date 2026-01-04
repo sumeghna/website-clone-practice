@@ -1,40 +1,28 @@
-const products = [
-    {
-        name: "Campus OXYFIT Running Shoes",
-        brand: "Campus",
-        category: "Men",
-        price: 2499,
-        images: [
-            "https://images.unsplash.com/photo-1600185365483-26d7a4cc7519"
-        ],
-        description: "Lightweight running shoes with breathable mesh.",
-        rating: 4.3,
-        stock: 30
-    },
-    {
-        name: "Campus Women's Active Sneakers",
-        brand: "Campus",
-        category: "Women",
-        price: 1299,
-        images: [
-            "https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77"
-        ],
-        description: "Comfort sneakers for daily wear.",
-        rating: 4.1,
-        stock: 25
-    },
-    {
-        name: "Campus Kids Sports Shoes",
-        brand: "Campus",
-        category: "Kids",
-        price: 1599,
-        images: [
-            "https://images.unsplash.com/photo-1600185365926-3a2ce3cdb9eb"
-        ],
-        description: "Durable sports shoes for kids.",
-        rating: 4.0,
-        stock: 40
-    }
+module.exports = [
+  {
+    name: "Campus Maxpro Running Shoes",
+    brand: "Campus",
+    category: "men",
+    price: 1999,
+    stock: 40,
+    images: ["/uploads/sample1.png"],
+    isFeatured: true
+  },
+  {
+    name: "Campus Women Casual Sneakers",
+    brand: "Campus",
+    category: "women",
+    price: 1699,
+    stock: 50,
+    images: ["/uploads/sample2.png"],
+    isFeatured: true
+  },
+  {
+    name: "Campus Kids Sports Shoes",
+    brand: "Campus",
+    category: "kids",
+    price: 1299,
+    stock: 25,
+    images: ["/uploads/sample3.png"]
+  }
 ];
-
-module.exports = products;
