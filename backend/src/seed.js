@@ -1,25 +1,23 @@
 const mongoose = require("mongoose");
-const path = require("path");
 const dotenv = require("dotenv");
-dotenv.config({ path: path.resolve(__dirname, "../.env") });
-
 const Product = require("./models/product.model");
 const products = require("./data/products");
 
-const seedProducts = async () => {
+dotenv.config();
+
+const start = async () => {
   try {
     await mongoose.connect(process.env.MONGO_URI);
-    console.log("Connected to MongoDB");
 
     await Product.deleteMany();
     await Product.insertMany(products);
 
-    console.log("Products seeded successfully");
+    console.log("Database Seeded Successfully");
     process.exit();
-  } catch (error) {
-    console.error("Seeding failed", error);
+  } catch (err) {
+    console.error(err);
     process.exit(1);
   }
 };
 
-seedProducts();
+start();
