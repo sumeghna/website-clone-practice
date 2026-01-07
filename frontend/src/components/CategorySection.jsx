@@ -10,6 +10,7 @@ function CategorySection() {
 
       <div className="category-card">
         <img src="/images/women1.jpg" alt="Women" />
+        
         <h2>Women</h2>
       </div>
 

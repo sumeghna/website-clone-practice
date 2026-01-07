@@ -11,13 +11,12 @@ import WomenCategoryPage from "./pages/WomenCategoryPage";
 import KidsCategoryPage from "./pages/KidsCategoryPage";
 import SalePage from "./pages/SalePage";
 import Cart from "./pages/Cart";
-import Payment from "./pages/Payment";
 import OrderSuccess from "./pages/OrderSuccess";
 
 function App() {
   const location = useLocation();
 
-  // pages where banner should appear
+  // Pages where banner should appear
   const showBanner =
     location.pathname === "/" ||
     location.pathname === "/sale" ||
@@ -38,7 +37,6 @@ function App() {
         <Route path="/women" element={<WomenCategoryPage />} />
         <Route path="/kids" element={<KidsCategoryPage />} />
         <Route path="/cart" element={<Cart />} />
-        <Route path="/payment" element={<Payment />} />
         <Route path="/order-success" element={<OrderSuccess />} />
       </Routes>
 

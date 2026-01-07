@@ -1,19 +1,32 @@
 const express = require("express");
-const productRoutes = require("./routes/product.routes");
 const path = require("path");
+
+const productRoutes = require("./routes/product.routes");
+const uploadRoutes = require("./routes/upload.routes");
+const homeRoutes = require("./routes/home.routes");
 
 const app = express();
 
-// Middleware to parse JSON
+// Parse JSON
 app.use(express.json());
-app.use('/static', express.static(path.join(__dirname, 'assets')));
+
+// Serve uploads folder PUBLICLY
+app.use("/uploads", express.static(path.join(__dirname, "../uploads")));
+
 // Routes
 app.use("/api/products", productRoutes);
+app.use("/api/upload", uploadRoutes);
+app.use("/api/home", homeRoutes);
+
+// Health check
+app.get("/", (req, res) => {
+  res.send("API running");
+});
 
 // Global error handler
 app.use((err, req, res, next) => {
-  console.error(err.stack);
-  res.status(500).json({ success: false, message: "Server Error" });
+  console.error(err);
+  res.status(500).json({ success: false, message: err.message });
 });
 
 module.exports = app;
