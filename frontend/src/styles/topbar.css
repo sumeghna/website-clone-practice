@@ -1,0 +1,7 @@
+.topbar {
+  background: var(--primary-red);
+  color: white;
+  text-align: center;
+  padding: 8px;
+  font-size: 14px;
+}
