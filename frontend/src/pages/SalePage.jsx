@@ -1,6 +1,10 @@
 import "../styles/category.css";
 import ProductCard from "../components/ProductCard";
+import { useState } from "react";
 
+/* ============================
+   SALE PRODUCT LIST
+============================= */
 const saleProducts = [
   {
     id: 1,
@@ -52,31 +56,66 @@ const saleProducts = [
   },
 ];
 
+/* ============================
+           FILTER DATA
+============================= */
+const filterData = {
+  PRICE: ["Under ₹1000", "₹1000 - ₹2000", "Above ₹2000"],
+  DISCOUNT: ["10% & Above", "20% & Above", "30% & Above", "40% & Above"],
+  SIZE: ["6", "7", "8", "9", "10"],
+  COLOR: ["Black", "White", "Grey", "Beige"],
+  "PRODUCT TYPE": ["Sneakers", "Running Shoes", "Casual Shoes"]
+};
+
 function SalePage() {
+  const [openFilter, setOpenFilter] = useState(null);
+
+  const toggleFilter = (name) => {
+    setOpenFilter(prev => prev === name ? null : name);
+  };
+
   return (
     <>
-      {/* Breadcrumb */}
-      <div className="breadcrumb">HOME / SHOP / SALE</div>
+      {/* BREADCRUMB */}
+      <div className="breadcrumb">
+        HOME / SHOP / SALE
+      </div>
 
       <div className="category-layout">
-        {/* LEFT FILTERS */}
+        
+        {/* FILTER SIDEBAR */}
         <aside className="filters">
-          <Filter title="PRICE" />
-          <Filter title="DISCOUNT" />
-          <Filter title="SIZE" />
-          <Filter title="COLOR" />
-          <Filter title="PRODUCT TYPE" />
+          {Object.keys(filterData).map((filterName) => (
+            <div className="filter-block" key={filterName}>
+              <div className="filter-header" onClick={() => toggleFilter(filterName)}>
+                <h4>{filterName}</h4>
+                <span className={`arrow ${openFilter === filterName ? "open" : ""}`}>
+                  ▼
+                </span>
+              </div>
+
+              {openFilter === filterName && (
+                <div className="filter-options">
+                  {filterData[filterName].map((opt, i) => (
+                    <label key={i} className="filter-option">
+                      <input type="checkbox" /> {opt}
+                    </label>
+                  ))}
+                </div>
+              )}
+            </div>
+          ))}
         </aside>
 
-        {/* RIGHT CONTENT */}
+        {/* PRODUCT AREA */}
         <div className="category-content">
           <div className="category-header">
-            <div>
+            <div className="title">
               <h2>Sale</h2>
-              <p>2068 products</p>
+              <p>{saleProducts.length} products</p>
             </div>
 
-            <select>
+            <select className="sort">
               <option>Sort</option>
               <option>Price: Low to High</option>
               <option>Price: High to Low</option>
@@ -92,20 +131,6 @@ function SalePage() {
         </div>
       </div>
     </>
-  );
-}
-
-/* Reusable filter dropdown */
-function Filter({ title }) {
-  return (
-    <details className="filter-box">
-      <summary>{title}</summary>
-      <div className="filter-content">
-        <label><input type="checkbox" /> Option 1</label>
-        <label><input type="checkbox" /> Option 2</label>
-        <label><input type="checkbox" /> Option 3</label>
-      </div>
-    </details>
   );
 }
 

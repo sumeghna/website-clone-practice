@@ -1,18 +1,24 @@
-/* Breadcrumb */
+/* =========================
+   BREADCRUMB
+========================= */
 .breadcrumb {
   padding: 20px 60px;
   font-size: 13px;
   color: #777;
 }
 
-/* Layout */
+/* =========================
+   LAYOUT
+========================= */
 .category-layout {
   display: flex;
   padding: 0 60px;
   gap: 40px;
 }
 
-/* Filters */
+/* =========================
+   FILTERS
+========================= */
 .filters {
   width: 220px;
 }
@@ -24,104 +30,7 @@
   cursor: pointer;
 }
 
-/* Content */
-.category-content {
-  flex: 1;
-}
-.product-card {
-  position: relative;   /* 🔥 REQUIRED */
-  background: white;
-}
-
-
-/* Header */
-.category-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 30px;
-}
-
-.view-icons span {
-  font-size: 20px;
-  margin-right: 10px;
-  cursor: pointer;
-}
-
-.title {
-  text-align: center;
-}
-
-.title h2 {
-  margin: 0;
-  font-size: 22px;
-}
-
-.title p {
-  margin: 4px 0 0;
-  color: #777;
-  font-size: 14px;
-}
-
-.sort {
-  padding: 10px 14px;
-  border: 1px solid #ddd;
-  background: white;
-}
-
-/* Products */
-.product-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 30px;
-}
-
-/* Product Card */
-.product-card {
-  position: relative;
-}
-
-.product-card img {
-  width: 100%;
-}
-
-/* Discount */
-.discount {
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  background: red;
-  color: white;
-  padding: 6px 8px;
-  font-size: 12px;
-}
-
-/* Wishlist */
-.wishlist {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  font-size: 20px;
-  cursor: pointer;
-}
-
-/* Price */
-.price {
-  font-size: 14px;
-}
-
-.price .old {
-  text-decoration: line-through;
-  color: #999;
-  margin-left: 6px;
-}
-
-.sale {
-  color: red;
-  margin-left: 6px;
-}
-/* FILTER DROPDOWNS */
-
+/* Dropdown filters */
 .filter-block {
   border-bottom: 1px solid #eee;
   padding: 15px 0;
@@ -171,46 +80,152 @@
   color: #999;
   font-size: 13px;
 }
-.filter-box {
-  border-bottom: 1px solid #eee;
-  padding: 15px 0;
+
+/* =========================
+   CONTENT
+========================= */
+.category-content {
+  flex: 1;
 }
 
-.filter-box summary {
-  cursor: pointer;
-  font-weight: 600;
-  list-style: none;
-}
-
-.filter-content {
-  padding-top: 10px;
+/* Header */
+.category-header {
   display: flex;
-  flex-direction: column;
-  gap: 8px;
-  color: #666;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 30px;
 }
 
-.rating {
+.title h2 {
+  margin: 0;
+  font-size: 22px;
+}
+
+.title p {
+  margin: 4px 0 0;
+  color: #777;
   font-size: 14px;
-  color: #f57c00;
-  margin: 6px 0;
 }
 
+.sort {
+  padding: 10px 14px;
+  border: 1px solid #ddd;
+  background: white;
+}
+
+/* =========================
+   PRODUCT GRID
+========================= */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+}
+
+/* =========================
+   PRODUCT CARD
+========================= */
+.product-card {
+  background: #fff;
+}
+
+/* Image wrapper (IMPORTANT FIX) */
+.product-image {
+  position: relative;
+  background: #f7f7f7;
+  padding: 10px;
+}
+
+.product-image img {
+  width: 100%;
+  display: block;
+}
+
+/* Discount badge (top-left) */
+.discount {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: #d4141e;
+  color: white;
+  padding: 6px 8px;
+  font-size: 12px;
+  z-index: 2;
+}
+
+/* Wishlist icon (top-right) */
+.wishlist {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 20px;
+  cursor: pointer;
+  z-index: 2;
+}
+
+/* BEST SELLER / NEW ARRIVAL badge */
+.badge,
 .tag {
   position: absolute;
   bottom: 10px;
   left: 10px;
-  background: red;
+  background: #d4141e;
   color: white;
-  font-size: 12px;
+  font-size: 11px;
   padding: 4px 8px;
+  font-weight: 600;
+  z-index: 2;
 }
 
+/* Rating */
+.rating {
+  font-size: 14px;
+  color: #f57c00;
+  margin: 8px 0 4px;
+}
+
+.rating span {
+  color: #777;
+  margin-left: 6px;
+}
+
+/* Price */
+.price {
+  font-size: 14px;
+}
+
+.price .old {
+  text-decoration: line-through;
+  color: #999;
+  margin-left: 6px;
+}
+
+.sale {
+  color: red;
+  margin-left: 6px;
+}
+
+/* Sizes */
 .sizes {
   display: flex;
   gap: 6px;
   font-size: 12px;
   color: gray;
+  margin-top: 6px;
 }
 
+/* Add to cart button */
+.add-to-cart {
+  width: 100%;
+  margin-top: 10px;
+  padding: 10px;
+  background: #000;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+}
 
+.add-to-cart:hover {
+  background: #d4141e;
+}
