@@ -26,7 +26,8 @@ function Navbar() {
         {/* FIXED */}
         <Link to="/sale">SALE</Link>
 
-        <Link to="/">NEW ARRIVALS</Link>
+        <Link to="/new-arrivals">NEW ARRIVALS</Link>
+
 
         {/* MAIN CATEGORY LINKS */}
         <Link to="/men">MEN</Link>
