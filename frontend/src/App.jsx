@@ -16,6 +16,10 @@ import Cart from "./pages/Cart";
 import Payment from "./pages/Payment";
 import OrderSuccess from "./pages/OrderSuccess";
 
+// AUTH PAGES
+import Register from "./pages/Register";
+import Login from "./pages/Login";
+
 function App() {
   const location = useLocation();
 
@@ -27,22 +31,32 @@ function App() {
     location.pathname === "/women" ||
     location.pathname === "/kids";
 
+  // Hide Navbar & Footer on auth pages
+  const hideLayout =
+    location.pathname === "/register" ||
+    location.pathname === "/login";
+
   return (
     <>
-      <TopBar />
-      <Navbar />
+      {!hideLayout && <TopBar />}
+      {!hideLayout && <Navbar />}
 
-      {/* GLOBAL TOAST COMPONENT */}
+      {/* GLOBAL TOAST */}
       <ToastContainer position="top-right" autoClose={1500} />
 
-      {showBanner && <Banner />}
+      {!hideLayout && showBanner && <Banner />}
 
       <Routes>
+        {/* MAIN PAGES */}
         <Route path="/" element={<Home />} />
         <Route path="/sale" element={<SalePage />} />
         <Route path="/men" element={<CategoryPage />} />
         <Route path="/women" element={<WomenCategoryPage />} />
         <Route path="/kids" element={<KidsCategoryPage />} />
+
+        {/* AUTH */}
+        <Route path="/register" element={<Register />} />
+        <Route path="/login" element={<Login />} />
 
         {/* CART + PAYMENT FLOW */}
         <Route path="/cart" element={<Cart />} />
@@ -50,7 +64,7 @@ function App() {
         <Route path="/order-success" element={<OrderSuccess />} />
       </Routes>
 
-      <Footer />
+      {!hideLayout && <Footer />}
     </>
   );
 }
