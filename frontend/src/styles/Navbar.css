@@ -1,0 +1,11 @@
+.profile-icon {
+  font-size: 20px;
+  cursor: pointer;
+  margin-right: 12px;
+  display: flex;
+  align-items: center;
+}
+
+.profile-icon:hover {
+  color: #c40000;
+}

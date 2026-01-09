@@ -1,0 +1,98 @@
+.login-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.login-modal {
+  width: 900px;
+  height: 480px;
+  background: #fff;
+  display: flex;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.close-btn {
+  position: absolute;
+  right: 20px;
+  top: 15px;
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.login-left {
+  width: 50%;
+  background: #0f0f0f;
+  color: white;
+  padding: 40px;
+}
+
+.login-left h1 {
+  font-size: 36px;
+}
+
+.login-left p {
+  opacity: 0.8;
+}
+
+.features span {
+  display: block;
+  margin-top: 20px;
+}
+
+.login-right {
+  width: 50%;
+  padding: 40px;
+}
+
+.phone-input {
+  display: flex;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  margin-top: 20px;
+}
+
+.phone-input span {
+  padding: 10px;
+  background: #eee;
+}
+
+.phone-input input {
+  border: none;
+  outline: none;
+  flex: 1;
+  padding: 10px;
+}
+
+.checkbox {
+  display: block;
+  margin: 15px 0;
+}
+
+.login-right button {
+  width: 100%;
+  background: black;
+  color: white;
+  border: none;
+  padding: 12px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.login-right button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.terms {
+  margin-top: 10px;
+  font-size: 12px;
+  opacity: 0.7;
+}
